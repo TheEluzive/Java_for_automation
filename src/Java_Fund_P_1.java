@@ -6,6 +6,7 @@ public class Java_Fund_P_1 {
         int firstNumber = in.nextInt(); //read two numbers
         int secondNumber = in.nextInt();
 
+
         firstNumber = lowestFromTwo(firstNumber, secondNumber); //return lowest
         System.out.println(firstNumber);
 
