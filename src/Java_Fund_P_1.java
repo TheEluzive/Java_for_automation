@@ -13,11 +13,11 @@ public class Java_Fund_P_1 {
 
         int thirdNumber = in.nextInt(); //3 number with last lowest
         firstNumber = lowestFromTwo(firstNumber, thirdNumber);
-        System.out.print(firstNumber);
+        System.out.println(firstNumber);
 
         int fourthNumber = in.nextInt(); // 4
         firstNumber=lowestFromTwo(firstNumber, fourthNumber);
-        System.out.print(firstNumber);
+        System.out.println(firstNumber);
 
 
 
