@@ -6,17 +6,20 @@ public class Java_Fund_P_1 {
         int firstNumber = in.nextInt(); //read two numbers
         int secondNumber = in.nextInt();
 
+
+
+
         firstNumber = lowestFromTwo(firstNumber, secondNumber); //return lowest
         System.out.println(firstNumber);
 
 
         int thirdNumber = in.nextInt(); //3 number with last lowest
         firstNumber = lowestFromTwo(firstNumber, thirdNumber);
-        System.out.print(firstNumber);
+        System.out.println(firstNumber);
 
         int fourthNumber = in.nextInt(); // 4
         firstNumber=lowestFromTwo(firstNumber, fourthNumber);
-        System.out.print(firstNumber);
+        System.out.println(firstNumber);
 
 
 
