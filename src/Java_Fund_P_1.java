@@ -3,25 +3,15 @@ import java.util.Scanner;
 public class Java_Fund_P_1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int firstNumber = in.nextInt(); //read two numbers
+
+        int firstNumber = in.nextInt(); //read  numbers
         int secondNumber = in.nextInt();
+        int thirdNumber = in.nextInt();
+        int fourthNumber = in.nextInt();
 
-
-
-
-        firstNumber = lowestFromTwo(firstNumber, secondNumber); //return lowest
-        System.out.println(firstNumber);
-
-
-        int thirdNumber = in.nextInt(); //3 number with last lowest
-        firstNumber = lowestFromTwo(firstNumber, thirdNumber);
-        System.out.println(firstNumber);
-
-        int fourthNumber = in.nextInt(); // 4
-        firstNumber=lowestFromTwo(firstNumber, fourthNumber);
-        System.out.println(firstNumber);
-
-
+        System.out.println("Two numbers : " + firstNumber + " " + secondNumber + "\n"+"lowest is " + lowestFromTwo(firstNumber,secondNumber ));
+        System.out.println("Three numbers : " + firstNumber + " " + secondNumber + " " + thirdNumber + "\n"+"lowest is " + lowestFromThree(firstNumber,secondNumber,thirdNumber));
+        System.out.println("Four numbers : " + firstNumber + " " + secondNumber + " " + thirdNumber + " " + fourthNumber +"\n"+"lowest is " + lowestFromFour(firstNumber,secondNumber,thirdNumber,fourthNumber));
 
 
 
@@ -31,9 +21,23 @@ public class Java_Fund_P_1 {
 
         int lowest=0;
         // if (firstNumber==secondNumber), else ???
-        if (firstNumber<secondNumber)
-            lowest=firstNumber;
-        else lowest=secondNumber;
+        lowest = (firstNumber < secondNumber) ? firstNumber : secondNumber;
+
+        return lowest;
+    }
+
+    public static int lowestFromThree(int firstNumber, int secondNumber, int thirdNumber) {
+
+        int lowest=lowestFromTwo(firstNumber, secondNumber);
+        lowest = (lowest < thirdNumber) ? lowest : thirdNumber;
+
+        return lowest;
+    }
+
+    public static int lowestFromFour(int firstNumber, int secondNumber, int thirdNumber, int fourthNumber) {
+
+        int lowest = lowestFromThree(firstNumber, secondNumber, thirdNumber);
+        lowest = (lowest <fourthNumber) ? lowest : fourthNumber;
 
         return lowest;
     }
