@@ -9,9 +9,9 @@ public class Java_Fund_P_1 {
         int thirdNumber = in.nextInt();
         int fourthNumber = in.nextInt(); // 4
 
-        System.out.println("Two numbers : " + firstNumber + " " + secondNumber + "\n"+"lowest is " + lowestFromTwo);
-        System.out.println("Three numbers : " + firstNumber + " " + secondNumber + + thirdNumber + "\n"+"lowest is " + lowestFromThree);
-        System.out.println("Four numbers : " + firstNumber + " " + secondNumber + + thirdNumber + fourthNumber +"\n"+"lowest is " + lowestFromFour());
+        System.out.println("Two numbers : " + firstNumber + " " + secondNumber + "\n"+"lowest is " + lowestFromTwo(firstNumber, secondNumber));
+        System.out.println("Three numbers : " + firstNumber + " " + secondNumber + " " + thirdNumber + "\n"+"lowest is " + lowestFromThree(firstNumber, secondNumber, thirdNumber));
+        System.out.println("Four numbers : " + firstNumber + " " + secondNumber + " " + thirdNumber + fourthNumber +"\n"+"lowest is " + lowestFromFour(firstNumber, secondNumber, thirdNumber, fourthNumber));
 
 
 
@@ -21,7 +21,7 @@ public class Java_Fund_P_1 {
 
         int lowest=0;
         // if (firstNumber==secondNumber), else ???
-        lowest = (firstNumber < secondNumber) ? firstNumber : secondNumber);
+        lowest = (firstNumber < secondNumber) ? firstNumber : secondNumber;
 
         return lowest;
     }
@@ -29,7 +29,7 @@ public class Java_Fund_P_1 {
     public static int lowestFromThree(int firstNumber, int secondNumber, int thirdNumber) {
 
         int lowest=lowestFromTwo(firstNumber, secondNumber);
-        lowest = (lowest < thirdNumber) ? lowest : thirdNumber.
+        lowest = (lowest < thirdNumber) ? lowest : thirdNumber;
 
         return lowest;
     }
