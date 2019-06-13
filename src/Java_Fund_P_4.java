@@ -8,7 +8,7 @@ public class Java_Fund_P_4 {
     System.out.print("Char = ");
 
     Scanner in = new Scanner(System.in);
-    char findChar = (char) in.next().charAt(0);;
+    char findChar =  in.next().charAt(0);
 
     int amount=0;
     for (int i=0; i < masChar.length; i++){
