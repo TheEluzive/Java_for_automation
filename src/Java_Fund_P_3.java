@@ -8,7 +8,7 @@ public class Java_Fund_P_3 {
         int n = in.nextInt(); //array size
         a = new int[n];
 
-        double rand = 0;
+        double rand;
         for (int i = 0; i < n; i++) {
             rand = Math.random() * 20;
             a[i] = (int) rand;
@@ -37,18 +37,20 @@ public class Java_Fund_P_3 {
 
 
         }
+        System.out.println("\nAgain.\n");
 
+        main(args);
 
     }
 
-    static void printA(int[] a){
+    private static void printA(int[] a){
         System.out.println("Sorted :");
         for (int i=0; i<a.length; i++) {
             System.out.println(a[i]);
         }
     }
 
-    static void bubbleSort(int[] a){
+    private static void bubbleSort(int[] a){
         System.out.println("U chose : bubbleSort  ");
         for (int i=0; i<a.length; i++)
             for (int j=0; j<a.length-1; j++)
@@ -62,12 +64,11 @@ public class Java_Fund_P_3 {
         printA(a);
     }
 
-    static void optimizedBubbleSort(int[] a){
+    private static void optimizedBubbleSort(int[] a){
         System.out.println("U chose : optimizedBubbleSort  ");
         int f=1; // if sorted then =0
         for (int i=0; i<a.length; i++) {
             f = 0;
-
             for (int j = 0; j < a.length - 1; j++) {
                 if (a[j] > a[j + 1]) {
                     int first = a[j];
@@ -81,7 +82,8 @@ public class Java_Fund_P_3 {
         }
         printA(a);
     }
-    static void insertionSort(int[] a)  {
+
+    private static void insertionSort(int[] a)  {
         System.out.println("U chose : insertionSort  ");
         int i, key, j;
         for (i = 1; i < a.length; i++)
@@ -98,7 +100,7 @@ public class Java_Fund_P_3 {
         printA(a);
     }
 
-    static void selectionSort(int[] a) {
+    private static void selectionSort(int[] a) {
         System.out.println("U chose : selectionSort  ");
         for (int min = 0; min < a.length - 1; min++) {
             int least = min;
@@ -113,4 +115,6 @@ public class Java_Fund_P_3 {
         }
         printA(a);
     }
+
+
 }
