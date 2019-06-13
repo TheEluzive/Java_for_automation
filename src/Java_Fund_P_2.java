@@ -10,7 +10,7 @@ public class Java_Fund_P_2 {
         a=new int[n];
 
         double rand;
-        for (int i=0; i<a.length; i++) {
+        for (int i=0; i < a.length; i++) {
             rand= Math.random()*20;
             a[i]=(int)rand;
             System.out.println(a[i]);
@@ -18,7 +18,7 @@ public class Java_Fund_P_2 {
 
         System.out.println("\nSorted :");
         bubbleSort(a);
-        for (int i=0; i<n; i++) {
+        for (int i=0; i < n; i++) {
             System.out.println(a[i]);
         }
 
@@ -43,7 +43,7 @@ public class Java_Fund_P_2 {
     private static void findOneByOne(int f, int[] a){
 
         boolean result=false;
-        for (int i=0; i<a.length; i++){
+        for (int i = 0; i < a.length; i++){
             if (a[i] == f) {
                 result = true;
             }
@@ -55,13 +55,13 @@ public class Java_Fund_P_2 {
 
     private static void bubbleSort(int[] a){
         int first;
-        for (int i=0; i<a.length; i++)
-        for (int j=0; j<a.length-1; j++)
+        for (int i = 0; i < a.length; i++)
+        for (int j = 0; j < a.length-1; j++)
         {
-            if (a[j]>a[j+1]){
-               first=a[j];
-               a[j]=a[j+1];
-               a[j+1]=first;
+            if (a[j] > a[j+1]){
+               first = a[j];
+               a[j] = a[j+1];
+               a[j+1] = first;
             }
         }
     }
@@ -77,7 +77,7 @@ public class Java_Fund_P_2 {
             right = middle;
         }
         System.out.println("Result of binary search one by one is :");
-        boolean result = (a[right]== f) ? true : false;
+        boolean result = (a[right] == f) ? true : false;
         System.out.println(result);
 
     }

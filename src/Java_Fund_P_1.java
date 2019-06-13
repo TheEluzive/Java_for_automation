@@ -15,37 +15,30 @@ public class Java_Fund_P_1 {
         numbers[3] = in.nextInt();
         System.out.println();
 
-        System.out.println("Two numbers : " + numbers[0] + " " + numbers[1] + "\n"+"lowest is " + lowestFromTwo(numbers[0], numbers[1]));
-        System.out.println("Three numbers : " + numbers[0] + " " + numbers[1] + " " + numbers[2] + "\n"+"lowest is " + lowestFromThree(numbers[0], numbers[1], numbers[2]));
-        System.out.println("Four numbers : " + numbers[0] + " " + numbers[1] + " " + numbers[2] + " " + numbers[3] +"\n"+"lowest is " + lowestFromFour(numbers[0], numbers[1], numbers[2], numbers[3]));
-
-
+        System.out.println("Two numbers : " + numbers[0] + " " + numbers[1] + "\n"+"lowest is " + lowest(numbers[0], numbers[1]) + "\n");
+        System.out.println("Three numbers : " + numbers[0] + " " + numbers[1] + " " + numbers[2] + "\n"+"lowest is " + lowest(numbers[0], numbers[1], numbers[2])+ "\n");
+        System.out.println("Four numbers : " + numbers[0] + " " + numbers[1] + " " + numbers[2] + " " + numbers[3] +"\n"+"lowest is " + lowest(numbers[0], numbers[1], numbers[2], numbers[3])+ "\n");
 
     }
 
-    private static int lowestFromTwo(int ... numbers) {
-
-        int lowest=0;
+    private static int lowest(int first, int second) {
+        int lowestNumber;
         // if (numbers[0]==numbers[1]), else ???
-        lowest = (numbers[0] < numbers[1]) ? numbers[0] : numbers[1];
+        lowestNumber = (first < second) ? first : second;
 
-        return lowest;
+
+        return lowestNumber;
     }
 
-    private static int lowestFromThree(int ... numbers) {
-
-        int lowest=lowestFromTwo(numbers[0], numbers[1]);
-        lowest = (lowest < numbers[2]) ? lowest : numbers[2];
-
-        return lowest;
+    private static int lowest(int first, int second, int third) {
+        int lowestNumber=lowest(first, second);
+        lowestNumber = (lowestNumber < third) ? lowestNumber : third;
+        return lowestNumber;
     }
 
-
-    private static int lowestFromFour(int ... numbers) {
-
-        int lowest = lowestFromThree(numbers[0], numbers[1], numbers[2]);
-        lowest = (lowest <numbers[3]) ? lowest : numbers[3];
-
-        return lowest;
+    private static int lowest(int first, int second, int third, int fourth) {
+        int lowestNumber = lowest(first, second,  third);
+        lowestNumber = (lowestNumber < fourth) ? lowestNumber : fourth;
+        return lowestNumber;
     }
 }
