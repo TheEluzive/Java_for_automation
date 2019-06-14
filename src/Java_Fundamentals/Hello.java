@@ -1,23 +1,16 @@
 package Java_Fundamentals;
 
-public class Hello {
+class Hello {
+    public static void main( String[] args ) {
 
-        public static void main(String args[]) {
-            for(int i=0; i<3; i++) {
-                switch( i ) {
-                    case 0: break;
-                    case 1:
-                        System.out.print( "one " );
-                        break;
-                    case 2:
-                        System.out.print( "two " );
-                        break;
-                    case 3:
-                        System.out.print( "three " );
-                        break;
-                }
-            }
-            System.out.print( "done" );
+                String s1 = args[0];
+                String s2 = args[1];
+                String s3 = args[2];
+                String s4 = args[3];
+                System.out.println( "args[1] = " + s2 );
+
         }
+    }
 
-}
+
+
