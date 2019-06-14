@@ -1,3 +1,5 @@
+package Java_Fundamentals;
+
 import java.util.Scanner;
 
 public class Java_Fund_P_2 {
