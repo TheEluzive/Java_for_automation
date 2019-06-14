@@ -7,7 +7,7 @@ public class Author {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    void print(){
+    protected void print(){
     System.out.println("Author" + firstName + " " + lastName);
     }
 }
