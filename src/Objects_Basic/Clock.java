@@ -19,38 +19,17 @@ public class Clock {
 
     protected Clock(int seconds){
         this.seconds = seconds;
-        if (seconds > 59) {
-            minutes = seconds / 60;
-            seconds = seconds - 60*minutes;
-        }
-        if (minutes>59){
-            hours = minutes / 60;
-            minutes = minutes - 60*hours;
-        }
+        checkSecAndMin();
 
     }
     protected void setClock(int seconds){
         this.seconds = seconds;
-        if (seconds > 59) {
-            minutes = seconds / 60;
-            seconds = seconds - 60*minutes;
-        }
-        if (minutes > 59){
-            hours = minutes / 60;
-            minutes = minutes - 60*hours;
-        }
+        checkSecAndMin();
     }
 
     protected void tick(){
         seconds++;
-        if (seconds > 59) {
-            minutes = seconds / 60;
-            seconds = seconds - 60*minutes;
-        }
-        if (minutes>59){
-            hours = minutes / 60;
-            minutes = minutes - 60*hours;
-        }
+        checkSecAndMin();
     }
 
     protected void addClock(Clock clock){
@@ -58,14 +37,7 @@ public class Clock {
         this.minutes = minutes +clock.minutes;
         this.hours = hours + clock.hours;
 
-        if (seconds > 59) {
-            minutes = seconds / 60;
-            seconds = seconds - 60*minutes;
-        }
-        if (minutes>59){
-            hours = minutes / 60;
-            minutes = minutes - 60*hours;
-        }
+        checkSecAndMin();
     }
 
     protected String returnHHMMSS(Clock clock){
@@ -77,48 +49,45 @@ public class Clock {
         HHMMSS = "" + hour;
         if (minutes < 10) HHMMSS = HHMMSS +  ":0" + minutes;
             else HHMMSS = HHMMSS + ":" + minutes;
-
         if (seconds< 10) HHMMSS = HHMMSS + ":0" + seconds;
         else HHMMSS = HHMMSS + ":" + seconds;
 
 
         return HHMMSS;
-
     }
 
     protected void tickDown(){
         seconds--;
     }
 
-    protected Clock substrackClock(Clock clock){
+    protected Clock substracktClock(Clock clock){
 
         this.seconds = seconds + minutes*60 + hours*60;
         minutes = 0; hours = 0;
 
-
-
         clock.seconds = clock.seconds + clock.minutes*60 + clock.hours*60;
         clock.minutes = 0; clock.hours = 0;
-
-
 
         int sec = (this.seconds>clock.seconds) ? this.seconds - clock.seconds : clock.seconds - this.seconds;
         int min=0;
         int hour=0;
-        if (sec > 59) {
-            min = sec / 60;
-            sec = sec - 60*min;
-        }
-        if (min>59){
-            hour = min / 60;
-            min = min - 60*hour;
-        }
 
+        checkSecAndMin();
 
         Clock subtrackedClock = new Clock(hour, min, sec);
         return  subtrackedClock;
     }
 
-
+    private int checkSecAndMin(){
+        if (seconds > 59) {
+            minutes = seconds / 60;
+            seconds = seconds - 60*minutes;
+        }
+        if (minutes>59){
+            hours = minutes / 60;
+            minutes = minutes - 60*hours;
+        }
+        return seconds;
+    }
 
 }

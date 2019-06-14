@@ -24,7 +24,7 @@ public class ClockDemo {
         System.out.println(firstClock.returnHHMMSS(firstClock));
 
         System.out.print("\n" + firstClock.returnHHMMSS(firstClock) + " difference with " + secondClock.returnHHMMSS(secondClock) + " = ");
-        Clock differentClock = firstClock.substrackClock(secondClock);
+        Clock differentClock = firstClock.substracktClock(secondClock);
         System.out.println(differentClock.returnHHMMSS(differentClock));
     }
 }
