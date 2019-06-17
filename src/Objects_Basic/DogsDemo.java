@@ -8,9 +8,9 @@ public class DogsDemo {
 
 
     //private  static
-    private static int amount = 0;
-    //private Dogs[] dogs = new Dogs[amount];
-    static Dogs sobaka = new Dogs();
+    private static int amount;
+    private static Dogs[] dogs;
+    //static Dogs sobaka = new Dogs();
 
 
     public static void main(String ... args) {
@@ -18,15 +18,19 @@ public class DogsDemo {
         System.out.print("Amount dogs = ");
 
         amount = in.nextInt();
+        dogs = new Dogs[amount];
+        for (int i=0; i < amount; i++)
+            dogs[i] = new Dogs();
 
-        System.out.println("Specify any or none of the values for name, age or size(SMALL, MEDIUM or BIG) ");
-        /*for (int i=0; i<amount;){
-        if (dogs[2].newDogs(2))
+        //System.out.println("Specify any or none of the values for name, age or size(SMALL, MEDIUM or BIG) ");
+        for (int i=0; i<amount;){
+        if (dogs[i].newDogs(2))
             i++;
-        }*/
-        //System.out.println(dogs);
-        sobaka.newDogs(1);
-       // dogs[0].newDogs(0);
+        }
+
+
+
+
 
     }
 

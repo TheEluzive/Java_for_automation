@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Dogs {
     private String name;
     private enum size{SMALL, BIG, MEDIUM};
-    private int age;
+    protected int age;
 
     Dogs(){
         this.name = "";
@@ -21,7 +21,7 @@ public class Dogs {
 
     protected boolean newDogs(int i){
 
-       /* Scanner in = new Scanner((System.in));
+        Scanner in = new Scanner((System.in));
         System.out.print("Dog " + (i+1) + "=");
         input = in.nextLine();
 
@@ -71,8 +71,8 @@ public class Dogs {
         boolean result = check == 'Y' || check == 'y';
         System.out.println(result);
 
-*return result;*/
-        return true;
+        return result;
+
     }
 
     private char [] masCharIsWord;
@@ -89,9 +89,9 @@ public class Dogs {
 
     public boolean isEnum(String string) {
 
-       if (string == "SMALL"|string == "MEDIUM"|string == "BIG")
+       if (string == "SMALL")
              return true;
-       else return  false;
+       else return false;
     }
 
 }
