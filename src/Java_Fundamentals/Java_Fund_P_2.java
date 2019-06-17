@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Java_Fund_P_2 {
     public static void main(String[] args) {
-        int a[];
+        int[] a;
         Scanner in = new Scanner(System.in);
         System.out.print("Array size = ");
         int n = in.nextInt(); //array size
@@ -79,7 +79,7 @@ public class Java_Fund_P_2 {
             right = middle;
         }
         System.out.println("Result of binary search one by one is :");
-        boolean result = (a[right] == f) ? true : false;
+        boolean result = a[right] == f;
         System.out.println(result);
 
     }

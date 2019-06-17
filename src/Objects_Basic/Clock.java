@@ -84,7 +84,9 @@ public class Clock {
             hour = min / 60;
             min = min - 60*hour;
         }
-
+        if (hour > 24){
+            hour = hour - 24;
+        }
 
 
 
@@ -100,6 +102,9 @@ public class Clock {
         if (minutes>59){
             hours = minutes / 60;
             minutes = minutes - 60*hours;
+        }
+        if (hours > 24){ //miss day
+            hours = hours - 24;
         }
         return seconds;
     }

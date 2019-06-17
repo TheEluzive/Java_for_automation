@@ -6,43 +6,31 @@ import java.util.Scanner;
 
 public class DogsDemo {
 
-    private static int i = 0;
-    private static String input;
-    private static String amountS = "";
+
+    //private  static
     private static int amount = 0;
+    //private Dogs[] dogs = new Dogs[amount];
+    static Dogs sobaka = new Dogs();
 
-    public static void main(String ... args){
+
+    public static void main(String ... args) {
         Scanner in = new Scanner((System.in));
-        input  = in.nextLine();
-        char[] masChar = input.toCharArray();
+        System.out.print("Amount dogs = ");
 
+        amount = in.nextInt();
 
-
-        while (masChar[i] != ' '){
-            amountS = amountS +  masChar[i];
+        System.out.println("Specify any or none of the values for name, age or size(SMALL, MEDIUM or BIG) ");
+        /*for (int i=0; i<amount;){
+        if (dogs[2].newDogs(2))
             i++;
-        }
-        amount = Integer.parseInt(amountS);
-        System.out.println(amount);
-        Dogs[] dogs = new Dogs[amount];
-
-        String first="";
-        String second="";
-        String third="";
-
-
-        while (masChar[i] != ' ' || masChar[i] !='\n'){
-            first = first +  masChar[i];
-            i++;
-        }
-        while (masChar[i] != ' ' || masChar[i] !='\n'){
-            first = first +  masChar[i];
-            i++;
-        }
-        while (masChar[i] != ' ' || masChar[i] !='\n'){
-            first = first +  masChar[i];
-            i++;
-        }
+        }*/
+        //System.out.println(dogs);
+        sobaka.newDogs(1);
+       // dogs[0].newDogs(0);
 
     }
+
+
+
+
 }
