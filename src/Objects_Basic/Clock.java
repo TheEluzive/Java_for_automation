@@ -1,5 +1,7 @@
 package Objects_Basic;
 
+import com.sun.org.apache.xml.internal.utils.SystemIDResolver;
+
 public class Clock {
 
     private int hours;
@@ -68,11 +70,23 @@ public class Clock {
         clock.seconds = clock.seconds + clock.minutes*60 + clock.hours*60;
         clock.minutes = 0; clock.hours = 0;
 
+
+
         int sec = (this.seconds>clock.seconds) ? this.seconds - clock.seconds : clock.seconds - this.seconds;
         int min=0;
         int hour=0;
+        System.out.println(sec);
+        if (sec > 59) {
+            min = sec / 60;
+            sec = sec - 60*min;
+        }
+        if (min>59){
+            hour = min / 60;
+            min = min - 60*hour;
+        }
 
-        checkSecAndMin();
+
+
 
         Clock subtrackedClock = new Clock(hour, min, sec);
         return  subtrackedClock;
