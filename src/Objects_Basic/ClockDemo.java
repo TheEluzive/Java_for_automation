@@ -17,7 +17,7 @@ public class ClockDemo {
             secondClock.tick();
         System.out.println(secondClock.returnHHMMSS(secondClock));
 
-        firstClock.addClock(secondClock);
+
 
         System.out.print("\n" + firstClock.returnHHMMSS(firstClock) + " + " + secondClock.returnHHMMSS(secondClock) + " = ");
         firstClock.addClock(secondClock);
