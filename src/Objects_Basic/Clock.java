@@ -2,9 +2,9 @@ package Objects_Basic;
 
 public class Clock {
 
-    protected int hours;
-    protected int minutes;
-    protected int seconds;
+    private int hours;
+    private int minutes;
+    private int seconds;
 
     protected Clock(){
         this.hours = 12;
