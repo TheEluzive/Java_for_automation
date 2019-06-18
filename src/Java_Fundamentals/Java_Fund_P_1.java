@@ -1,3 +1,5 @@
+package Java_Fundamentals;
+
 import java.util.Scanner;
 
 public class Java_Fund_P_1 {
@@ -15,7 +17,8 @@ public class Java_Fund_P_1 {
         numbers[3] = in.nextInt();
         System.out.println();
 
-        System.out.println("Two numbers : " + numbers[0] + " " + numbers[1] + "\n"+"lowest is " + lowest(numbers[0], numbers[1]) + "\n");
+        System.out.println("Two numbers : " + numbers[0] + " " + numbers[1] +
+                "\n"+"lowest is " + lowest(numbers[0], numbers[1]) + "\n");
         System.out.println("Three numbers : " + numbers[0] + " " + numbers[1] + " " + numbers[2] + "\n"+"lowest is " + lowest(numbers[0], numbers[1], numbers[2])+ "\n");
         System.out.println("Four numbers : " + numbers[0] + " " + numbers[1] + " " + numbers[2] + " " + numbers[3] +"\n"+"lowest is " + lowest(numbers[0], numbers[1], numbers[2], numbers[3])+ "\n");
 

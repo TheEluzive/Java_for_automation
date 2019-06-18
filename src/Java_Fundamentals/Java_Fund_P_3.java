@@ -1,8 +1,10 @@
+package Java_Fundamentals;
+
 import java.util.Scanner;
 
 public class Java_Fund_P_3 {
     public static void main(String[] args) {
-        int a[];
+        int[] a;
         Scanner in = new Scanner(System.in);
         System.out.print("Array size = ");
         int n = in.nextInt(); //array size
