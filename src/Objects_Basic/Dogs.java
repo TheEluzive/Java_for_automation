@@ -11,6 +11,7 @@ public class Dogs {
         this.name = "";
         this.age = -1;
         size sizeE;
+
     }
 
 
@@ -19,8 +20,8 @@ public class Dogs {
     private char check;
     private char[] masChar;
     private  String input="";
-    private int usedAge;
-    private int usedEnum;
+    private int usedAge=-1;
+    private int usedEnum=-1;
     protected boolean newDogs(int i){
 
         Scanner in = new Scanner((System.in));
@@ -47,19 +48,29 @@ public class Dogs {
         }
         number++;
 
+
+        //
+        //
+        //
         //now all words about dog in strings "words"
+        //
+        //
+        //
+
+
+
 
         for (int j = 0; j < number; j++) {
-           // System.out.print(words[j]);
-           // System.out.println(" " + isNumber(words[j]));
             if (isNumber(words[j])) { //first number in string == age
-                age = Integer.parseInt(words[j]);
-                usedAge = j;
-                break;
+                if (Integer.parseInt(words[j]) > 0& Integer.parseInt(words[j])<=20) { //if it from 1 to 20
+                    age = Integer.parseInt(words[j]);
+                    usedAge = j;
+                    break;
+                }
             }
         }
 
-        for (int j = 0; j < number; j++) {
+        for (int j = 0; j < number; j++) { //search size
             //System.out.print(words[j]+" ");
             if (words[j].equalsIgnoreCase("small")) {
                 //-----------------
@@ -84,26 +95,65 @@ public class Dogs {
             }
         }
 
+
+
+
         for (int j=0; j <= number; j++) //all not used words go to name
             if (j!=usedAge&j!=usedEnum)
-                name = name + words[j]+" ";  //can be hard name like "DogKing Artur Younger Third"
+                name = name + words[j]+" ";  //can be hard name like "Dog`s King Artur Younger Third"
+
+        String[] names = {"Tom", "Sharik", "Brain", "Muhtar"}; //names for auto-generate;
+        double randNum;
+
+
+        if (name.isEmpty()|name.equalsIgnoreCase(" ")){
+            //System.out.println("name is undefinied");
+            randNum=Math.random()*names.length;
+            name = names[(int)randNum];
+        }
+
+        if (age == -1) { // if age in undefinied create random
+            randNum= Math.random()*20+1;
+            age=(int) randNum;
+        }
+
+        if (sizeE == null) { // if size in undefinied create random
+
+
+            randNum = Math.random() * 3;
+            int randSize = (int) randNum;
+            switch (randSize) {
+                case 0:
+                    sizeE = size.SMALL;
+                    break;
+                case 1:
+                    sizeE = size.MEDIUM;
+                    break;
+                case 2:
+                    sizeE = size.BIG;
+                    break;
+                default:
+                    break;
+
+            }
+        }
 
 
 
 
+
+        System.out.println("========");
         System.out.println("Dog " + (i+1) + ":" );
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
-        System.out.println("Size:" + sizeE);
+        System.out.println("Size: " + sizeE);
+        System.out.println("========");
 
 
 
-        System.out.println("All right(Y/N)?");
-        check =  in.next().charAt(0);
-        boolean result = check == 'Y' || check == 'y';
-        //System.out.println(result);
 
-        return result;
+
+        return true;
 
     }
 

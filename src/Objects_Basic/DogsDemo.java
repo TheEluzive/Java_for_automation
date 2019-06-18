@@ -21,14 +21,15 @@ public class DogsDemo {
 
         Dogs.size[] size = new Dogs.size[amount];
                 dogs = new Dogs[amount];
-        for (int i=0; i < amount; i++)
+        for (int i=0; i < amount; i++) //initialization
             dogs[i] = new Dogs();
         //Dogs.size[] size = new Dogs.size[amount];
-        //System.out.println("Specify any or none of the values for name, age or size(SMALL, MEDIUM or BIG) ");
+        System.out.println("Specify any or none of the values for name, age or size(SMALL, MEDIUM or BIG) ");
         for (int i=0; i<amount;){
         if (dogs[i].newDogs(i))
             i++;
         }
+
 
 
 
