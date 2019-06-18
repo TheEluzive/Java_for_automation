@@ -60,6 +60,7 @@ public class Dogs implements Comparable <Dogs> {
 
         if (name.isEmpty()|name.equalsIgnoreCase(" ")){
             setRandomName();
+            System.out.println("YEEEEEEEEEEEEEEEEEEEEEEES");
         }
 
         if (age == -1) { // if age in undefinied create random
