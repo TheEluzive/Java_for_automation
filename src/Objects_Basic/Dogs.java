@@ -2,14 +2,14 @@ package Objects_Basic;
 
 import java.util.Scanner;
 
-public class Dogs {
+public class Dogs implements Comparable <Dogs> {
     private String name;
-    private String size;
+    protected String size;
     protected enum sizeE{SMALL,
-        BIG,
-        MEDIUM;
+        MEDIUM,
+        BIG;
         protected String ToString(){
-            return name().charAt(0) + name().substring(1).toLowerCase();
+            return name();
         }
     }
 
@@ -23,7 +23,11 @@ public class Dogs {
 
     }
 
-
+    public int compareTo(Dogs o) {
+        int result = this.name.compareTo(o.name);
+        if (result == 0) result = this.size.compareTo((o.size));
+        return result;
+    }
 
 
     private char check;
@@ -108,7 +112,7 @@ public class Dogs {
     }
 
     private void setRandomName(){
-        String[] names = {"Tom", "Sharik", "Brain", "Muhtar"}; //names for auto-generate;
+        String[] names = {"Tom", "Sharik", "Brain", "Muhtar", "Jack"}; //names for auto-generate;
         //System.out.println("name is undefinied");
         randNum=Math.random()*names.length;
         name = names[(int)randNum];
@@ -150,12 +154,14 @@ public class Dogs {
 
     private void searchName(){
         for (int j=0; j <= number; j++) //all not used words go to name
-            if (j!=usedAge&j!=usedEnum)
-                name = name + words[j]+" ";  //can be hard name like "Dog`s King Artur Younger Third"
+            if (j!=usedAge&j!=usedEnum) {
+
+                name = name + words[j] + " ";  //can be hard name like "Dog`s King Artur Younger Third"
+            }
 
     }
 
-    private void print(int i){
+    protected void print(int i){
         System.out.println("========");
         System.out.println("Dog " + (i+1) + ":" );
         System.out.println("Name: " + name);
@@ -164,6 +170,7 @@ public class Dogs {
         System.out.println("========");
     }
 
+    private int firstChar=0;
     private void fromStringToWords(){
         for (int j = 0; j < wordsAmount; j ++)
             words[j] = "";
@@ -180,6 +187,40 @@ public class Dogs {
         number++;
 
     }
+
+    protected void sortByAge(Dogs dogs, Dogs dogForSort){ //ascending
+        if (this.age>dogs.age){  //if == ??????
+            dogForSort.age = this.age;
+            dogForSort.size = this.size;
+            dogForSort.name = this.name;
+            this.age = dogs.age;
+            this.size = dogs.size;
+            this.name = dogs.name;
+            dogs.age = dogForSort.age;
+            dogs.size = dogForSort.size;
+            dogs.name = dogForSort.name;
+
+        }
+    }
+
+    protected void sortBySize(Dogs dogs, Dogs dogForSort) { //ascending
+
+        if (sizeE.valueOf(this.size).ordinal() > sizeE.valueOf(dogs.size).ordinal()){   //if == ??????
+            dogForSort.age = this.age;
+            dogForSort.size = this.size;
+            dogForSort.name = this.name;
+            this.age = dogs.age;
+            this.size = dogs.size;
+            this.name = dogs.name;
+            dogs.age = dogForSort.age;
+            dogs.size = dogForSort.size;
+            dogs.name = dogForSort.name;
+
+        }
+    }
+
+
+
 
 
 }
