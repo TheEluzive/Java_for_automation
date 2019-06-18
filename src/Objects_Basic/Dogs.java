@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class Dogs implements Comparable <Dogs> {
     private String name;
-    protected String size;
-    protected enum sizeE{SMALL,
+    private String size;
+    protected int age;
+    private enum sizeE{SMALL,
         MEDIUM,
         BIG;
         protected String ToString(){
@@ -13,7 +14,7 @@ public class Dogs implements Comparable <Dogs> {
         }
     }
 
-    protected int age;
+
 
     Dogs(){
         this.name = "";
@@ -24,7 +25,7 @@ public class Dogs implements Comparable <Dogs> {
     }
 
     public int compareTo(Dogs o) {
-        int result = this.name.compareTo(o.name);
+        int result = this.name.compareToIgnoreCase(o.name);
         if (result == 0) result = this.size.compareTo((o.size));
         return result;
     }
@@ -75,21 +76,21 @@ public class Dogs implements Comparable <Dogs> {
 
     }
 
-    private char [] masCharIsWord;
-    public  boolean isNumber(String string){
+    private char[] masCharIsWord;
+    private  boolean isNumber(String string){
         masCharIsWord = string.toCharArray();
         boolean result = true;
         for (int i=0; i<masCharIsWord.length; i++)
-            if (Character.isDigit(masCharIsWord[i])==false) {
+            if (!Character.isDigit(masCharIsWord[i])) {
                 result = false;
                 break;
             }
         return result;
     }
-
+    private int randSize;
     private void setRandomSize(){
         randNum = Math.random() * 3;
-        int randSize = (int) randNum;
+        randSize = (int) randNum;
         switch (randSize) {
             case 0:
                 size = sizeE.SMALL.ToString();
@@ -152,9 +153,16 @@ public class Dogs implements Comparable <Dogs> {
 
     }
 
+
     private void searchName(){
         for (int j=0; j <= number; j++) //all not used words go to name
             if (j!=usedAge&j!=usedEnum) {
+
+                //String whynot=words[j].charAt(0) + words[j].substring(1).toLowerCase();
+                //words[j] = words[j].charAt(0) + words[j].substring(1).toLowerCase();
+                // why not worked??? String index out of range: -1
+                //words[j] = whynot;
+                ///whyyyyyyyyyyyyyyyyyy
 
                 name = name + words[j] + " ";  //can be hard name like "Dog`s King Artur Younger Third"
             }
