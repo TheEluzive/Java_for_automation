@@ -60,6 +60,6 @@ public class Cylinder extends Circle {
     }
 
     protected double getVolume() {
-        return getArea() * height;
+        return super.getArea() * height;
     }
 }
