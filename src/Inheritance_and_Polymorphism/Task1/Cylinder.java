@@ -1,17 +1,25 @@
-package Inheritance_and_Polymorphism;
+package Inheritance_and_Polymorphism.Task1;
 
 import java.util.Objects;
 
 public class Cylinder extends Circle {
     private double height;
 
-    public Cylinder(double height) {
-        this.height = height;
+    public Cylinder(){
+        this.height = 0;
+        super.setColour("None");
+
+    }
+    public Cylinder(double radius) {
+        super(radius);
+
+
     }
 
     public Cylinder(double radius, double height) {
         super(radius);
         this.height = height;
+
     }
 
     public Cylinder(double radius, double height, String color) {
@@ -38,7 +46,7 @@ public class Cylinder extends Circle {
 
     @Override
     public String toString() {
-        return "Cylinder{Radius: " + getRadius() + "\ncolor: " + getColour() + "\nheight:" + height + "\narea: " + getArea() + "\nvolume: " + getVolume() + "\n}";
+        return "Cylinder{\nRadius: " + getRadius() + "\ncolor: " + getColour() + "\nheight:" + height + "\narea: " + getArea() + "\nvolume: " + getVolume() + "\n}\n";
     }
 
     @Override
@@ -48,7 +56,7 @@ public class Cylinder extends Circle {
 
     @Override
     protected double getArea() {
-        return 2 * Math.PI * getRadius() * height + 2 * super.getArea();
+        return 2 * PI * getRadius() * height + 2 * super.getArea();
     }
 
     protected double getVolume() {

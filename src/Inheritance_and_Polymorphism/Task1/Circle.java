@@ -1,17 +1,18 @@
-package Inheritance_and_Polymorphism;
+package Inheritance_and_Polymorphism.Task1;
 
 import java.util.Objects;
 
 public class Circle {
     private double radius;
     private String colour;
+    static final double PI = 3.14;
     Circle(){
         this.radius = 0;
         this.colour = "None";
     }
     Circle(double radius){
         this.radius = radius;
-        this.colour = "";
+        this.colour = "None";
     }
 
     Circle( double radius, String color){
@@ -36,12 +37,12 @@ public class Circle {
     }
 
     protected double getArea(){
-        return radius*radius*Math.PI;
+        return radius*radius*PI;
     }
 
     @Override
     public String toString() {
-        return "Cirlce{Radius: " + radius + "\ncolor: " + colour + "\narea: " + getArea()+"\n}";
+        return "Cirlce\n{Radius: " + radius + "\ncolor: " + colour + "\narea: " + getArea()+"\n}\n";
     }
 
     @Override
