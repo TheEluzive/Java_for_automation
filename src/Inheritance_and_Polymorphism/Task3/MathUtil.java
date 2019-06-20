@@ -58,4 +58,40 @@ public class MathUtil {
         return powResult;
     }
 
+    public static double pow(double number, double power){
+        double powResult=1;
+
+        if (power < 0) return 1 / pow(number, -1 * power);
+
+
+        for (int i = 0; i < power; i++)
+            powResult = powResult * number;
+        return powResult;
+    }
+
+    public static double radical(double number, double pow){ //
+
+        double x1 = 2;
+        double factor = 1;
+        double savePow = pow;
+        while(pow > 1){
+           factor = factor / 2;
+           pow--;
+        }
+
+        System.out.println(factor);
+
+
+
+        double x2 = factor*(x1+number/x1);
+
+        for (int i =0; i < 50; i++){
+            x2 = factor*(x2+number/x2);
+            System.out.println(x2);
+            //if (savePow(number, savePow) ==) break;
+        }
+
+    return x2;
+    }
+
 }
