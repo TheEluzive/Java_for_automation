@@ -7,9 +7,9 @@ public class MovableRectangle implements Movable{
     @Override
     public String toString() {
         return "MovableRectangle\n{\n" +
-                "topLeft=" + topLeft +
-                "bootomRight=" + bootomRight +
-                "}\n";
+                "topLeft(" + topLeft.getX() + ":" +topLeft.getY() + ")" +
+                "\nbootomRight(" + bootomRight.getX() + ","+ bootomRight.getY()  + "\n)" +
+                "xSpeed =" + getXSpeed()+ " ySpeed=" + getYspeed() + "\n" + ")\n" ;
     }
 
     @Override
@@ -56,22 +56,24 @@ public class MovableRectangle implements Movable{
         this.bootomRight = bootomRight;
     }
 
-    public void getXSpeed(){
-        topLeft.getxSpeed();
+    public int getXSpeed(){
+        return topLeft.getxSpeed();
     }
 
-    public void getYspeed(){
-        topLeft.getySpeed();
+    public int getYspeed(){
+        return topLeft.getySpeed();
     }
 
     public void setXSpeed(int x){
         topLeft.setxSpeed(x);
         bootomRight.setxSpeed(x);
+        System.out.println("xSpeed change to: " + getXSpeed());
     }
 
-    public void setYspeed(int x){
-        topLeft.setySpeed(x);
-        bootomRight.setxSpeed(x);
+    public void setYspeed(int y){
+        topLeft.setySpeed(y);
+        bootomRight.setySpeed(y);
+        System.out.println("xSpeed change to: " + getYspeed());
     }
 
     public MovableRectangle(MovablePoint topLeft, MovablePoint bootomRight) {
