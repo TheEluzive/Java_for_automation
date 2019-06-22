@@ -7,6 +7,10 @@ public class Clock {
     private int hours;
     private int minutes;
     private int seconds;
+    public static final int MIN_IN_HOUR = 60;
+    public static final int SEC_IN_HOUR = 60;
+    public static final int HOURS_IN_DAY = 24;
+
 
     protected Clock(){
         this.hours = 12;
@@ -76,16 +80,16 @@ public class Clock {
         int min=0;
         int hour=0;
         System.out.println(sec);
-        if (sec > 59) {
-            min = sec / 60;
-            sec = sec - 60*min;
+        if (sec > SEC_IN_HOUR - 1) {
+            min = sec / SEC_IN_HOUR;
+            sec = sec - SEC_IN_HOUR*min;
         }
-        if (min>59){
-            hour = min / 60;
-            min = min - 60*hour;
+        if (min>MIN_IN_HOUR - 1){
+            hour = min / MIN_IN_HOUR;
+            min = min - MIN_IN_HOUR*hour;
         }
-        if (hour > 24){
-            hour = hour - 24;
+        if (hour > HOURS_IN_DAY){
+            hour = hour - HOURS_IN_DAY;
         }
 
 
@@ -95,16 +99,16 @@ public class Clock {
     }
 
     private int checkSecAndMin(){
-        if (seconds > 59) {
-            minutes = seconds / 60;
-            seconds = seconds - 60*minutes;
+        if (seconds > SEC_IN_HOUR - 1) {
+            minutes = seconds / SEC_IN_HOUR;
+            seconds = seconds - SEC_IN_HOUR*minutes;
         }
-        if (minutes>59){
-            hours = minutes / 60;
-            minutes = minutes - 60*hours;
+        if (minutes > MIN_IN_HOUR - 1){
+            hours = minutes / MIN_IN_HOUR;
+            minutes = minutes - MIN_IN_HOUR*hours;
         }
-        if (hours > 24){ //miss day
-            hours = hours - 24;
+        if (hours > HOURS_IN_DAY - 1) { //miss day
+            hours = hours - HOURS_IN_DAY;
         }
         return seconds;
     }

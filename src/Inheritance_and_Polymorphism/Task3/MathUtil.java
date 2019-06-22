@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 
 public class MathUtil {
 
-
+    public static final double PI = 3.14;
 
     public static int min(int[] array){
 

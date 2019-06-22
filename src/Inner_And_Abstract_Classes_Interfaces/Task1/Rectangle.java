@@ -1,4 +1,4 @@
-package Inner_And_Abstract_Classes_Interfaces.Task_1;
+package Inner_And_Abstract_Classes_Interfaces.Task1;
 
 import java.util.Objects;
 
@@ -28,11 +28,16 @@ public class Rectangle extends Shape {
     }
 
     @Override
+    public double getPerimeter() {
+        return 2* (width + lenght);
+    }
+
+    @Override
     public boolean isInside(double x, double y) {
         double xAngle = lenght / 2;
         double yAngle = width / 2;
         if (x>=0&y>=0){
-            if(x<xAngle&y<yAngle) return true;
+            if(x<=xAngle&y<=yAngle) return true;
         }
         if (x>=0&y<=0){
             if(x<=xAngle&y>=-1*yAngle) return true;
@@ -64,24 +69,22 @@ public class Rectangle extends Shape {
     }
 
     public String getColour() {
-        return getColour();
+        return super.getColour();
     }
 
     protected void setColour(String colour) {
-        this.setColour(colour);
+        super.setColour(colour);
     }
 
     public boolean isFilled() {
-        return isFilled();
+        return super.isFilled();
     }
 
     protected void setFilled(boolean filled) {
-        this.setFilled(filled);
+        super.setFilled(filled);
     }
 
-    public double getPerimeter() {
-        return width * lenght;
-    }
+
 
     @Override
     public String toString() {

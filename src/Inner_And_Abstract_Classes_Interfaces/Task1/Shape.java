@@ -1,4 +1,4 @@
-package Inner_And_Abstract_Classes_Interfaces.Task_1;
+package Inner_And_Abstract_Classes_Interfaces.Task1;
 
 import java.util.Objects;
 

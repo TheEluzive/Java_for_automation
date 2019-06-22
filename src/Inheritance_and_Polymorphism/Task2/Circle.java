@@ -1,10 +1,12 @@
 package Inheritance_and_Polymorphism.Task2;
 
+import Inheritance_and_Polymorphism.Task3.MathUtil;
+
 import java.util.Objects;
 
 public class Circle extends Shape {
     private  double radius;
-    double PI = 3.14;
+
     public Circle() {
         super();
         this.radius = 1.0;
@@ -48,22 +50,22 @@ public class Circle extends Shape {
     }
 
     public String getColour() {
-        return getColour();
+        return super.getColour();
     }
 
     protected void setColour(String colour) {
-        this.setColour(colour);
+        super.setColour(colour);
     }
 
     public boolean isFilled() {
-        return isFilled();
+        return super.isFilled();
     }
 
     protected void setFilled(boolean filled) {
-        this.setFilled(filled);
+        super.setFilled(filled);
     }
 
     public double getArea(){
-        return PI*radius*radius;
+        return MathUtil.PI *radius*radius;
     }
 }

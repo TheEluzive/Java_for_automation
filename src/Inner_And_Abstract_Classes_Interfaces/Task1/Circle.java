@@ -1,12 +1,10 @@
-package Inner_And_Abstract_Classes_Interfaces.Task_1;
-
-import Inheritance_and_Polymorphism.Task3.MathUtil;
+package Inner_And_Abstract_Classes_Interfaces.Task1;
 
 import java.util.Objects;
 
 public class Circle extends Shape {
     private  double radius;
-    static final double  PI = 3.14;
+    static final double  PI = 3.1415;
     public Circle() {
         super();
         this.radius = 1.0;
@@ -29,9 +27,20 @@ public class Circle extends Shape {
     }
 
     @Override
-    public boolean isInside(double x, double y) {
+    public double getArea(){
+        return PI*radius*radius;
+    }
 
-        return ( Math.sqrt( (Math.pow(x,2))-(Math.pow(y,2) ) )> radius)?true:false;
+    @Override
+    public boolean isInside(double x, double y) {
+        System.out.println(
+                (Math.sqrt(
+                (Math.pow(x,2)) +
+                        (Math.pow(y,2))
+                           )
+                )
+                +" " + Math.sqrt(radius+radius));
+        return ( Math.sqrt( (Math.pow(x,2))+(Math.pow(y,2) ) )<= Math.sqrt(radius+radius))?true:false;
     }
 
     @Override
@@ -57,27 +66,30 @@ public class Circle extends Shape {
         return radius;
     }
 
+
     protected void setRadius(double radius) {
         this.radius = radius;
     }
 
+    @Override
     public String getColour() {
-        return getColour();
+        return super.getColour();
     }
 
+    @Override
     protected void setColour(String colour) {
-        this.setColour(colour);
+        super.setColour(colour);
     }
 
+    @Override
     public boolean isFilled() {
         return isFilled();
     }
 
+    @Override
     protected void setFilled(boolean filled) {
-        this.setFilled(filled);
+        super.setFilled(filled);
     }
 
-    public double getArea(){
-        return PI*radius*radius;
-    }
+
 }

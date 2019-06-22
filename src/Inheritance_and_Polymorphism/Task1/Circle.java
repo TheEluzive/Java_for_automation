@@ -1,11 +1,13 @@
 package Inheritance_and_Polymorphism.Task1;
 
+import Inheritance_and_Polymorphism.Task3.MathUtil;
+
 import java.util.Objects;
 
 public class Circle {
     private double radius;
     private String colour;
-    static final double PI = 3.14;
+
     Circle(){
         this.radius = 0;
         this.colour = "None";
@@ -37,7 +39,7 @@ public class Circle {
     }
 
     protected double getArea(){
-        return radius*radius*PI;
+        return radius*radius* MathUtil.PI;
     }
 
     @Override

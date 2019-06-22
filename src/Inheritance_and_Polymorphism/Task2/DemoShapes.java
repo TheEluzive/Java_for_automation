@@ -26,7 +26,7 @@ public class DemoShapes {
 
         for (int i = 0; i < n; i++) {
             System.out.println(shapes[i]);
-
+            System.out.println(shapes[i].getColour());
             if (shapes[i].getClass().getName() == "Inheritance_and_Polymorphism.Task2.Shape") {
                 System.out.println();
             }

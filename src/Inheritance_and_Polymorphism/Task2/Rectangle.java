@@ -39,23 +39,23 @@ public class Rectangle extends Shape {
     }
 
     public String getColour() {
-        return getColour();
+        return super.getColour();
     }
 
     protected void setColour(String colour) {
-        this.setColour(colour);
+        super.setColour(colour);
     }
 
     public boolean isFilled() {
-        return isFilled();
+        return super.isFilled();
     }
 
     protected void setFilled(boolean filled) {
-        this.setFilled(filled);
+        super.setFilled(filled);
     }
 
     public double getPerimeter() {
-        return width * lenght;
+        return 2*(lenght+width);
     }
 
     @Override

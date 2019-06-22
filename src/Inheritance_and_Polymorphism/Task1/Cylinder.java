@@ -1,5 +1,7 @@
 package Inheritance_and_Polymorphism.Task1;
 
+import Inheritance_and_Polymorphism.Task3.MathUtil;
+
 import java.util.Objects;
 
 public class Cylinder extends Circle {
@@ -56,7 +58,7 @@ public class Cylinder extends Circle {
 
     @Override
     protected double getArea() {
-        return 2 * PI * getRadius() * height + 2 * super.getArea();
+        return 2 * MathUtil.PI * getRadius() * height + 2 * super.getArea();
     }
 
     protected double getVolume() {
