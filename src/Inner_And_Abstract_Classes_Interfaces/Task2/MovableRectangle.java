@@ -73,7 +73,7 @@ public class MovableRectangle implements Movable{
     public void setYspeed(int y){
         topLeft.setySpeed(y);
         bootomRight.setySpeed(y);
-        System.out.println("xSpeed change to: " + getYspeed());
+        System.out.println("ySpeed change to: " + getYspeed());
     }
 
     public MovableRectangle(MovablePoint topLeft, MovablePoint bootomRight) {
