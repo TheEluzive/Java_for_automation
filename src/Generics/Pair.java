@@ -20,10 +20,10 @@ public class Pair<S,C>{
         this.c = c;
     }
 
-        public static class demoFirst implements Comparable <demoFirst>{
+        public static class DemoFirst implements Comparable <DemoFirst>{
             private int a;
             private double b;
-            public demoFirst(int a1, double b2){
+            public DemoFirst(int a1, double b2){
                 a = a1;
                 b = b2;
             }
@@ -46,20 +46,20 @@ public class Pair<S,C>{
 
             @Override
             public String toString() {
-                return "demoFirst{" +
+                return "DemoFirst{" +
                         "a=" + a +
                         ", b=" + b +
                         '}';
             }
 
             @Override
-            public int compareTo(demoFirst o) {
+            public int compareTo(DemoFirst o) {
                 if (this.a == o.a&&this.b == o.b) return 1;
                 return 0;
             }
         }
 
-    public static class demoSecond implements Comparable <demoSecond> {
+    public static class DemoSecond implements Comparable <DemoSecond> {
         private int a;
         private int b;
         private int c;
@@ -76,19 +76,19 @@ public class Pair<S,C>{
             this.c = c;
         }
 
-        public demoSecond(int a, int b, int c) {
+        public DemoSecond(int a, int b, int c) {
             this.a = a;
             this.b = b;
             this.c = c;
         }
-        public int compareTo(demoSecond o) {
+        public int compareTo(DemoSecond o) {
             if (this.a == o.a&&this.b == o.b&&this.c == o.c) return 1;
             return 0;
         }
 
         @Override
         public String toString() {
-            return "demoSecond{" +
+            return "DemoSecond{" +
                     "a=" + a +
                     ", b=" + b +
                     ", c=" + c +
