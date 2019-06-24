@@ -52,13 +52,23 @@ public class Game {
     }
 
     public static void pick(Field field, int y, int x){
-        int yPick=y; int xPick=x;
+        int yPick=y; int xPick=x; int dataBeforeChecking = 0;
         int result = field.openCell(yPick,xPick);
         while (result == 1){
             field.showPlayersField();
-            yPick=in.nextInt();
-            xPick=in.nextInt();
+            dataBeforeChecking = in.nextInt();
+            if (dataBeforeChecking >= 0&dataBeforeChecking<field.getHeight()) {
+                yPick = dataBeforeChecking;
+                result = field.openCell(yPick,xPick);;
+            }
+                else pick(field, y, x);
+            dataBeforeChecking = in.nextInt();
+            if (dataBeforeChecking >= 0&dataBeforeChecking<field.getWidth()){
+            xPick=dataBeforeChecking;
             result = field.openCell(yPick,xPick);;
+            }
+                else pick(field, y, x);
+
         }
         if (result==0) {
             System.out.println("Loose!");

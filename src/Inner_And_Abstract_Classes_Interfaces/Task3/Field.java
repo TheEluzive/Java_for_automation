@@ -56,7 +56,7 @@ public  class Field implements IField{
     public int openCell(int y, int x) {
         arrayCharsPlayers[y][x] = arrayDigitAndBombs[y][x];
         openedCell++;
-        if (openedCell == height*width - amountBombs) return 2;
+        if (openedCell == height*width - amountBombs - 1) return 2;
         if(arrayDigitAndBombs[y][x] == 'b') return 0;
         else return 1;
 
