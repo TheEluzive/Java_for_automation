@@ -24,12 +24,13 @@ public class DemoShapes  {
         for (int i = 0; i < n; i++) {
             System.out.println(shapes[i]);
 
-            if (shapes[i].getClass().getName() == "Inner_And_Abstract_Classes_Interfaces.Task1.Shape") {
-                System.out.println();
-            }
+
 
             System.out.println("Area = " + (shapes[i]).getArea());
+            System.out.println("Perimeter = " + shapes[i].getPerimeter());
+            System.out.println("Points - (5,5), (0,5), (1,1), (0,0.5) inside this figure?");
             System.out.println(shapes[i].isInside(5, 5));
+            System.out.println(shapes[i].isInside(0, 5));
             System.out.println(shapes[i].isInside(1, 1));
             System.out.println(shapes[i].isInside(0, 0.5));
 

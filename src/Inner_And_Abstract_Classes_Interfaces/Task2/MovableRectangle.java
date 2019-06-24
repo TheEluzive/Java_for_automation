@@ -8,8 +8,8 @@ public class MovableRectangle implements Movable{
     public String toString() {
         return "MovableRectangle\n{\n" +
                 "topLeft(" + topLeft.getX() + ":" +topLeft.getY() + ")" +
-                "\nbootomRight(" + bootomRight.getX() + ","+ bootomRight.getY()  + "\n)" +
-                "xSpeed =" + getXSpeed()+ " ySpeed=" + getYspeed() + "\n" + ")\n" ;
+                "\nbootomRight(" + bootomRight.getX() + ","+ bootomRight.getY()  + ")" +
+                "\nxSpeed =" + getXSpeed()+ " ySpeed=" + getYspeed() + "\n" + ")\n" ;
     }
 
     @Override

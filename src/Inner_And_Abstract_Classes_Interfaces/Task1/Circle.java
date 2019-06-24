@@ -33,13 +33,13 @@ public class Circle extends Shape {
 
     @Override
     public boolean isInside(double x, double y) {
-        System.out.println(
+      /*  System.out.println(
                 (Math.sqrt(
                 (Math.pow(x,2)) +
                         (Math.pow(y,2))
                            )
                 )
-                +" " + Math.sqrt(radius+radius));
+                +" " + Math.sqrt(radius+radius));*/
         return ( Math.sqrt( (Math.pow(x,2))+(Math.pow(y,2) ) )<= Math.sqrt(radius+radius))?true:false;
     }
 

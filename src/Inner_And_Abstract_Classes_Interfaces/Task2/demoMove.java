@@ -16,7 +16,6 @@ public class demoMove {
         System.out.println("Down, down!\n");
         movableRectangle.moveDown();
         movableRectangle.moveDown();
-
         System.out.println(movableRectangle.toString());
 
         System.out.println("left, left, left!\n");
@@ -24,7 +23,10 @@ public class demoMove {
         movableRectangle.moveLeft();
         movableRectangle.moveLeft();
 
-        System.out.println(movableRectangle.toString());
+        System.out.println("right, right, right!\n");
+        movableRectangle.moveLeft();
+        movableRectangle.moveLeft();
+        movableRectangle.moveLeft();System.out.println(movableRectangle.toString());
 
 
         movableRectangle.setYspeed(2);
