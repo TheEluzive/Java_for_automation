@@ -20,7 +20,7 @@ public class Demo {
         System.out.println();
 
         Pair<String, Pair.DemoFirst> thirdPair = new Pair<>("work too so", demoFirst);
-        System.out.println(thirdPair.getFirst().toString());
+        System.out.println(thirdPair.getFirst());
         System.out.println(thirdPair.getSecond().toString());
         Pair.DemoFirst secondDemo = new Pair.DemoFirst(1,2.0);
 
