@@ -5,14 +5,9 @@ import java.util.Collections;
 import java.util.Scanner;
 
 
-public class DemoPerson {
-   // private static Person person;
-   // private static Person person2;
-    private static int n;
+public class DemoPerson {private static int n;
 
-   private static ArrayList<Person> returnedList;
-
-
+    private static ArrayList<Person> returnedList;
     private static ArrayList <Person> persons;
 
     public static void main(String[] args) {
@@ -70,8 +65,8 @@ public class DemoPerson {
                 break;
             case 4:
                 returnedList = new ArrayList<>();
-                for(int i =0; i<persons.size(); i++ ) {
-                    returnedList.add(new Person("" + persons.get(i).getName(), persons.get(i).getAge()+1-1));
+                for (Person person : persons) {
+                    returnedList.add(new Person("" + person.getName(), person.getAge() + 1 - 1));
 
                 }
                 outCompareToPersons();
@@ -79,13 +74,7 @@ public class DemoPerson {
                 returnedList.get(5).setAge(22);
                 outCompareToPersons();
                 break;
-
-
-
-
-
-
-            default:
+                default:
                     break;
 
         }
