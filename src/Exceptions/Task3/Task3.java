@@ -1,4 +1,4 @@
-package Exceptions;
+package Exceptions.Task3;
 
 import java.io.IOException;
 
@@ -20,15 +20,5 @@ public class Task3 {
         throw new MyException("some Exception");
     }
 
-    public static class MyException extends Exception{
-        private String exceptionString;
 
-        public MyException(String exceptionString){
-            this.exceptionString = exceptionString;
-        }
-
-        public String getString(){
-            return exceptionString;
-        }
-    }
 }

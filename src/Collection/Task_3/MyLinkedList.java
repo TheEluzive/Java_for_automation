@@ -1,11 +1,14 @@
 package Collection.Task_3;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Iterator;
 
 public class MyLinkedList<T> {
     public  Node head;
     private T t;
+     int size = 0;
 
     class Node {
 
@@ -29,9 +32,10 @@ public class MyLinkedList<T> {
 
         if (this.head == null) {
             this.head  = new_node;
+            size++;
         }
         else {
-
+            size++;
             Node last = this.head ;
             while (last.next != null) {
                 last = last.next;
@@ -84,6 +88,33 @@ public class MyLinkedList<T> {
             currNode = currNode.next;
         }
         System.out.println();
+    }
+
+    public Iterator<T> iterator(){
+        return new Iterator<T>() {
+            private int current = 0;
+            @Override
+            public boolean hasNext() {
+                if (size == current) {
+                    current = 0;
+                    return false;
+                }
+                current++;
+                return size > current;
+            }
+
+            @Override
+            public T next() {
+                Node node = head;
+
+                for (int i =0; i < current-1; i++) {
+                    node = node.next;
+                //System.out.println(current);
+                }
+
+                return node.data;
+            }
+        };
     }
 
 
