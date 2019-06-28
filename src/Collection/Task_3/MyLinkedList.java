@@ -44,13 +44,13 @@ public class MyLinkedList<T> {
         return this;
     }
 
-    public void get(int i){
+    public T get(int i){
         Node currNode = this.head;
         for (int j = 0; j < i; j++){
 
             currNode = currNode.next;
         }
-        System.out.print(currNode.data);
+        return currNode.data;
 
     }
 
@@ -58,6 +58,19 @@ public class MyLinkedList<T> {
         head = head.next;
     }
 
+    public void reverse(){
+        Node previous = null;
+        Node current = this.head;
+        Node next;
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        this.head = previous;
+
+    }
 
     public void printList()
     {
@@ -70,6 +83,7 @@ public class MyLinkedList<T> {
             System.out.print(currNode.data + " ");
             currNode = currNode.next;
         }
+        System.out.println();
     }
 
 
