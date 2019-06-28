@@ -75,6 +75,7 @@ public  class Field implements IField{
             }
       }
       setBombs();
+      this.showFullField();
 
 
 
