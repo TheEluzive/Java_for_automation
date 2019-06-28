@@ -1,7 +1,7 @@
 package Collection.Task_2;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+
 
 public class Person implements Comparable <Person> {
     private String name;
@@ -47,7 +47,7 @@ public class Person implements Comparable <Person> {
         age = 0;
     }
 
-   // @Override
+
     public static int compareName(Person o1, Person o2) {
         if (o1.name.compareTo(o2.name) != 0) return o1.name.compareTo(o2.name);
         else return o1.compareTo(o2);
@@ -75,6 +75,7 @@ public class Person implements Comparable <Person> {
     public static boolean CompareTwoListPerson(ArrayList<Person> person, ArrayList<Person> person2){
         if (person.size() == person2.size()){
             for(int i = 0; i<person.size(); i++){
+               // System.out.println(person.get(i).compareName(person.get(i),person2.get(i))+person.get(i).toString() + " " +  person2.get(i).toString() );
                 if (person.get(i).compareName(person.get(i),person2.get(i))!=0)
                     return false;
             }
