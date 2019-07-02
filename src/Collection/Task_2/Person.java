@@ -1,6 +1,7 @@
 package Collection.Task_2;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 
 public class Person implements Comparable <Person> {
