@@ -30,7 +30,7 @@ public class Game {
     public static void newGame(){
         Field field = new Field();
         field.setField();
-        field.firstChoose(2,3);
+        field.firstChoose(in.nextInt(),in.nextInt());
 
         pick(field,1,2);
         tryAgain();
@@ -63,7 +63,7 @@ public class Game {
             }
                 else pick(field, y, x);
             dataBeforeChecking = in.nextInt();
-            if (dataBeforeChecking >= 0&dataBeforeChecking<field.getWidth()){
+            if (dataBeforeChecking >= 0&dataBeforeChecking< Field.getWidth()){
             xPick=dataBeforeChecking;
             result = field.openCell(yPick,xPick);;
             }

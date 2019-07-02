@@ -24,15 +24,10 @@ public class Task_1 {
             System.out.println(name);
 
 
-
-
-        ArrayList<Person> sorted = new ArrayList<>();
-        sorted.addAll(arrayList.stream().
-                filter( (p)->p.getAge()>=20&& p.getAge()<=30).
+        ArrayList<Person> sorted = arrayList.stream().
+                filter((p) -> p.getAge() >= 20 && p.getAge() <= 30).
                 peek(p -> p.setName(p.getName().toUpperCase()))
-                .sorted(Comparator.comparingInt(p->p.getName().length()))
-                .collect(Collectors.toList())
-        );
+                .sorted(Comparator.comparingInt(p -> p.getName().length())).collect(Collectors.toCollection(ArrayList::new));
         ArrayList<String> names = new ArrayList<>();
         for (Person name : sorted) {
            // System.out.println(name);
