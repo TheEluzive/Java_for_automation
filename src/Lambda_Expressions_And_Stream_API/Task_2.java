@@ -50,7 +50,7 @@ public class Task_2 {
         System.out.println();
 
         //sum of all books prices in the list.
-        double sumPrices = arrayList.stream().mapToDouble(o -> o.getPrice()).sum();
+        double sumPrices = arrayList.stream().mapToDouble(Book::getPrice).sum();
         System.out.println(sumPrices);
 
     }
