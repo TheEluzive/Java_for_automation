@@ -3,10 +3,13 @@ package Java_Fundamentals;
 import java.util.Scanner;
 
 public class Java_Fund_P_1 {
+    private static int[] numbers = new int[4];
+    private static int lowestNumber;
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        int[] numbers = new int[4];
+
         System.out.print("First number = ");
         numbers[0] = in.nextInt(); //read  numbers
         System.out.print("Second number = ");
@@ -24,23 +27,21 @@ public class Java_Fund_P_1 {
 
     }
 
+
     private static int lowest(int first, int second) {
-        int lowestNumber;
         // if (numbers[0]==numbers[1]), else ???
         lowestNumber = (first < second) ? first : second;
-
-
         return lowestNumber;
     }
 
     private static int lowest(int first, int second, int third) {
-        int lowestNumber=lowest(first, second);
+        lowestNumber=lowest(first, second);
         lowestNumber = (lowestNumber < third) ? lowestNumber : third;
         return lowestNumber;
     }
 
     private static int lowest(int first, int second, int third, int fourth) {
-        int lowestNumber = lowest(first, second,  third);
+        lowestNumber = lowest(first, second,  third);
         lowestNumber = (lowestNumber < fourth) ? lowestNumber : fourth;
         return lowestNumber;
     }

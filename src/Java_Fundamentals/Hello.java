@@ -1,16 +1,14 @@
 package Java_Fundamentals;
 
+import Inheritance_and_Polymorphism.Task3.MathUtil;
+
 class Hello {
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
 
-                String s1 = args[0];
-                String s2 = args[1];
-                String s3 = args[2];
-                String s4 = args[3];
-                System.out.println( "args[1] = " + s2 );
-
-        }
+        System.out.println(MathUtil.radical(27, 3));
+        System.out.println(MathUtil.radical(16, 2));
     }
+}
 
 
 
